@@ -113,7 +113,7 @@ public class BatchApplication {
                      ItemWriter<ClientePotencial> itemWriter){
         logger.info("Recuperando STEP: Step Chunk - Processamento do arquivo de Clientes Potenciais");
         return stepBuilderFactory.get("Step Chunk - Processamento do arquivo de Clientes Potenciais")
-                .<ClientePotencial, ClientePotencial>chunk(1999999999)
+                .<ClientePotencial, ClientePotencial>chunk(100)
                 .reader(itemReader)
                 .processor(itemProcessor)
                 .writer(itemWriter)
